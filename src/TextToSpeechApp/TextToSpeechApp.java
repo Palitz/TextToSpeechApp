@@ -5,22 +5,14 @@ import java.util.Scanner;
 public class TextToSpeechApp {
 
     public static void main(String[] args) {
-        // Set the FreeTTS voice directory
-        System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
 
-        // Set the voice
+        System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
         String voiceName = "kevin16";
         Voice voice = getVoice(voiceName);
-
-        // Get user input for text
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the text to be spoken: ");
         String text = scanner.nextLine();
-
-        // Perform text-to-speech
         textToSpeech(voice, text);
-
-        // Close the scanner
         scanner.close();
     }
 
